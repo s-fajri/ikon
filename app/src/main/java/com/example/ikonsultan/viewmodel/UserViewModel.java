@@ -14,13 +14,11 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class UserViewModel extends ViewModel {
-
     private final APIRepository apiRepository;
     private final MutableLiveData<List<User>> user = new MutableLiveData<>();
 
-
-    public UserViewModel(APIRepository apiRepository) {
-        this.apiRepository = apiRepository;
+    public UserViewModel() {
+        apiRepository = new APIRepository();
         fetchUser();
     }
 
